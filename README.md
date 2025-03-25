@@ -6,6 +6,8 @@ Translation: Users can input a document or text and have it translated into Engl
 
 Chatting: Users can also engage in real-time conversations about the content of long documents. The chat functionality may include interactive features like asking questions about the document's content or discussing specific sections.
 
+![App preview](./app_preview.png)
+
 ## Run the application
 
 ### Prerequisites
