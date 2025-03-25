@@ -14,11 +14,18 @@ Chatting: Users can also engage in real-time conversations about the content of 
 |------|-------|
 |Python|`3.12.0`|
 |pip   |`3`    |
+|Azure OpenAI||
+|Model|`o3-mini`|
 
 #### Prepare the environment
 1. Obtain all the needed dependencies
 ```
 pip3 install -r requirements.txt
+```
+2. Copy and add the secrets to `.env` file
+```
+cp .env.template .env
+vi .env
 ```
 
 ### Start the application locally
