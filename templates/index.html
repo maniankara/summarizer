@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translator Web App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .chat-box {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            max-height: 400px;
+            overflow-y: scroll;
+            margin-bottom: 20px;
+        }
+        .message {
+            margin: 10px 0;
+        }
+        .message .user {
+            color: blue;
+            font-weight: bold;
+        }
+        .message .bot {
+            color: green;
+            font-weight: bold;
+        }
+        .input-container {
+            display: flex;
+            justify-content: center;
+        }
+        .input-container input {
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .input-container button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .input-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Translator Web App</h1>
+        <div class="chat-box">
+            {% if user_message %}
+                <div class="message">
+                    <span class="user">You: </span>{{ user_message }}
+                </div>
+                <div class="message">
+                    <span class="bot">Bot: </span>{{ bot_reply }}
+                </div>
+            {% endif %}
+        </div>
+        <form action="/chat" method="POST" enctype="multipart/form-data">
+            <div class="input-container">
+                <input type="text" name="message" placeholder="Perform the translation to English" required>
+                <input type="file" name="file" accept=".txt,.pdf,.docx,.csv">
+                <button type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
